@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sytle.css">
+    <title>Preço da Ação</title> 
+</head>
+<body>
+       
+        <main>
+            <section>
+                <h1>Calculando o valor das ações</h1>
+                <form>
+                    <div class="input-center">
+                         
+                        <label for="fii">FII</label>
+                        <input type="text" id="fii" required>
+                        <label for="valor_cota" >Valor da cota</label>
+                        <input type="number" id="valor_cota" required>
+                        <label for="div_yield">Div.Yield</label>
+                        <input type="number" id="div_yield" required>
+                        <label for="cotas">Cotas</label>
+                        <input type="number" id="cotas" required><br>
+                    </div>
+                    
+                    <span id="renda_mensal">Renda Mensal</span><br>
+
+                    <span id="valor_investido">Valor Investido</span><br>
+
+                    <button type="button" onclick="calcularAcoes()">Calcular</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>Desenvolvido por Márcio André</p>
+        </footer>
+
+        <script src="/script/scrip.js">
+
+        </script>
+</body>
+</html>
