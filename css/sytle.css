@@ -55,7 +55,7 @@ main{
 .button{
     display: flex;
     justify-content: center;
-    gap: 20px;    
+    gap: 20px;
 }
 .button-result{
      width: 120px;
