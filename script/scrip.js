@@ -5,16 +5,24 @@ function calcularAcoes(){
     let valor_cota = document.getElementById("valor_cota").value;
     let div_yield = document.getElementById("div_yield").value;
     let cotas = document.getElementById("cotas").value;
-    
-    let resultado_renda_mensal = div_yield * cotas;
 
-    document.getElementById("renda_mensal").innerHTML = "Renda Mensal é R$ " + arredondar(resultado_renda_mensal).toFixed(2);
-
-    let valor_investido = valor_cota * cotas;
-    document.getElementById("valor_investido").innerHTML = "Valor Investido é R$ " + arredondar(valor_investido).toFixed(2);
-
-    function arredondar(valor){
-        return Math.round(valor * 100) / 100;
-    }
-    
+    if(fii === '' || valor_cota === '' || div_yield === '' || cotas === '' ){
+        alert("Preencher todos os campos");
+    }else{
+        let resultado_renda_mensal = (div_yield * cotas).toFixed(2);
+        document.getElementById("renda_mensal").innerHTML = "Renda Mensal é R$ " + resultado_renda_mensal.replace('.',',');
+        
+        let valor_investido = (valor_cota * cotas).toFixed(2); 
+        document.getElementById("valor_investido").innerHTML = "Valor Investido é R$ " + valor_investido.replace('.',',');        
+    }       
 } 
+
+function arredondar(valor){
+    return Math.round(valor * 100) / 100;
+}    
+function limparInput(){
+    document.getElementById("form").reset();
+}
+function focarInput(){
+    document.getElementById("fii").focus();
+}
