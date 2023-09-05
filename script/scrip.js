@@ -8,15 +8,16 @@ function calcularAcoes(){
 
     if(fii === '' || valor_cota === '' || div_yield === '' || cotas === '' ){
         alert("Preencher todos os campos");
-    }else{
+    }else{        
         let resultado_renda_mensal = (div_yield * cotas).toFixed(2);
-        document.getElementById("renda_mensal").innerHTML = "Renda Mensal é R$ " + resultado_renda_mensal.replace('.',',');
+        let resultado_renda_mensal_convertido = new Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL'}).format(resultado_renda_mensal);
+        document.getElementById("renda_mensal").innerHTML = "Renda Mensal é R$ " + resultado_renda_mensal_convertido;
         
-        let valor_investido = (valor_cota * cotas).toFixed(2); 
-        document.getElementById("valor_investido").innerHTML = "Valor Investido é R$ " + valor_investido.replace('.',',');        
+        let valor_investido = (valor_cota * cotas).toFixed(2);
+        let valor_investido_convertido =  new Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL'}).format(valor_investido); 
+        document.getElementById("valor_investido").innerHTML = "Valor Investido é R$ " + valor_investido_convertido;        
     }       
 } 
-
 function arredondar(valor){
     return Math.round(valor * 100) / 100;
 }    
