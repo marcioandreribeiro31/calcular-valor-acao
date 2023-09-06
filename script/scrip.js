@@ -9,11 +9,11 @@ function calcularAcoes(){
     if(fii === '' || valor_cota === '' || div_yield === '' || cotas === '' ){
         alert("Preencher todos os campos");
     }else{        
-        let resultado_renda_mensal = (div_yield * cotas).toFixed(2);
+        let resultado_renda_mensal = (div_yield * cotas);
         let resultado_renda_mensal_convertido = new Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL'}).format(resultado_renda_mensal);
         document.getElementById("renda_mensal").innerHTML = "Renda Mensal é R$ " + resultado_renda_mensal_convertido;
         
-        let valor_investido = (valor_cota * cotas).toFixed(2);
+        let valor_investido = (valor_cota * cotas);
         let valor_investido_convertido =  new Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL'}).format(valor_investido); 
         document.getElementById("valor_investido").innerHTML = "Valor Investido é R$ " + valor_investido_convertido;        
     }       
@@ -23,6 +23,8 @@ function arredondar(valor){
 }    
 function limparInput(){
     document.getElementById("form").reset();
+    document.getElementById("renda_mensal").innerHTML = "Renda Mensal";
+    document.getElementById("valor_investido").innerHTML = "Valor Investido";    
 }
 function focarInput(){
     document.getElementById("fii").focus();
